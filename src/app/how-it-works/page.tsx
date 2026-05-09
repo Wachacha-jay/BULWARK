@@ -42,15 +42,21 @@ export default function HowItWorks() {
             ))}
           </div>
 
-          <div className="mt-20 p-8 rounded-3xl bg-bulwark-slate text-white flex flex-col md:flex-row items-center gap-8">
+          <div className="mt-20 p-12 rounded-[2.5rem] bg-bulwark-charcoal text-white flex flex-col md:flex-row items-center justify-between gap-8 border-l-8 border-bulwark-orange shadow-2xl">
             <div className="flex-1 space-y-4">
-              <h2 className="text-3xl font-bold">Watch Our Tutorial</h2>
-              <p className="text-white/60">See our experts demonstrate the application process for Bulwark Premium Wall Filler.</p>
+              <p className="text-bulwark-orange font-black text-xs uppercase tracking-widest">Technical Guide</p>
+              <h2 className="text-4xl font-black tracking-tight">Watch Our Tutorial</h2>
+              <p className="text-white/40 max-w-lg leading-relaxed italic">"See our experts demonstrate the precision application process for Bulwark Premium Wall Filler."</p>
             </div>
-            <button className="flex items-center space-x-3 bg-white text-bulwark-charcoal px-8 py-4 rounded-xl font-bold hover:bg-bulwark-orange hover:text-white transition-all">
+            <a 
+              href="https://youtu.be/K-v4lHdcGeA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-12 py-5 flex items-center space-x-3 text-lg"
+            >
               <PlayCircle size={24} />
               <span>Watch Video</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>

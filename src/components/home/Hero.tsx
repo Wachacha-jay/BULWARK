@@ -1,15 +1,46 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, ShieldCheck, Activity, BarChart3 } from "lucide-react";
 
+const heroSlides = [
+  {
+    image: "/images/product.png",
+    label: "Wall Filler",
+    badge: "#1 Choice",
+    subBadge: "Premium White hydrophobic finish"
+  },
+  {
+    image: "/images/products in manufacturing.jpg",
+    label: "Manufactured",
+    badge: "German Tech",
+    subBadge: "State of the art precision"
+  },
+  {
+    image: "/images/products in manufacturing 2.jpg",
+    label: "Quality Control",
+    badge: "ISO Certified",
+    subBadge: "Strict standards at every batch"
+  }
+];
+
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden bg-bulwark-charcoal text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,84,0,0.1),transparent)]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,84,0,0.15),transparent)]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
@@ -38,7 +69,7 @@ export default function Hero() {
               <span>Calculate Smart Quote</span>
               <ChevronRight size={20} />
             </Link>
-            <Link href="/products" className="btn-outline">
+            <Link href="/products" className="btn-outline px-10">
               Explore Products
             </Link>
           </div>
@@ -68,29 +99,81 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Slideshow Visual */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="relative hidden lg:block"
         >
-          <div className="relative z-10 glass-card bg-white/10 border-white/20 p-8 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 group">
-            <div className="aspect-[4/5] bg-gradient-to-br from-bulwark-slate to-bulwark-charcoal rounded-2xl overflow-hidden relative">
-               <img 
-                 src="/images/product.png" 
-                 alt="Bulwark Wall Filler" 
-                 className="object-contain w-full h-full scale-110 group-hover:scale-125 transition-transform duration-700"
-               />
+          <div className="relative z-10 glass-card bg-white/5 border-white/10 p-8 rounded-[3rem] shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700 group overflow-hidden">
+            <div className="aspect-[4/5] bg-gradient-to-br from-bulwark-slate to-bulwark-charcoal rounded-[2.5rem] overflow-hidden relative">
+               <AnimatePresence mode="wait">
+                 <motion.img 
+                   key={currentSlide}
+                   src={heroSlides[currentSlide].image}
+                   alt={heroSlides[currentSlide].label}
+                   initial={{ opacity: 0, scale: 1.1 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   exit={{ opacity: 0, scale: 0.9 }}
+                   transition={{ duration: 0.8, ease: "easeInOut" }}
+                   className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-1000"
+                 />
+               </AnimatePresence>
+               
+               {/* Overlay content based on slide */}
+               <div className="absolute inset-0 bg-gradient-to-t from-bulwark-charcoal via-transparent to-transparent opacity-60" />
+               
+               <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                  <motion.div 
+                    key={currentSlide}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="space-y-2"
+                  >
+                    <p className="text-bulwark-orange font-black text-sm uppercase tracking-widest">{heroSlides[currentSlide].label}</p>
+                    <div className="h-1 w-12 bg-white/20 rounded-full overflow-hidden">
+                      <motion.div 
+                        key={currentSlide}
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 5, ease: "linear" }}
+                        className="h-full bg-bulwark-orange"
+                      />
+                    </div>
+                  </motion.div>
+               </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-bulwark-orange p-6 rounded-2xl shadow-xl">
-              <p className="text-white font-black text-3xl">#1</p>
-              <p className="text-white/80 text-[10px] uppercase font-bold tracking-tighter">Choice of Top Contractors</p>
+
+            {/* Dynamic Badge */}
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={currentSlide}
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 20, opacity: 0 }}
+                className="absolute -bottom-6 -left-6 bg-bulwark-orange p-6 rounded-3xl shadow-xl z-20"
+              >
+                <p className="text-white font-black text-3xl">{heroSlides[currentSlide].badge}</p>
+                <p className="text-white/80 text-[10px] uppercase font-bold tracking-tighter">{heroSlides[currentSlide].subBadge}</p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Progress Indicators */}
+            <div className="absolute top-12 right-12 flex flex-col gap-2 z-20">
+              {heroSlides.map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`w-1.5 transition-all duration-500 rounded-full ${currentSlide === i ? "h-8 bg-bulwark-orange shadow-[0_0_10px_rgba(255,84,0,0.8)]" : "h-4 bg-white/20"}`} 
+                />
+              ))}
             </div>
           </div>
           
-          {/* Background shapes */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-bulwark-orange/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl" />
+          {/* Background Ambient Glow */}
+          <div className="absolute -top-10 -right-10 w-64 h-64 bg-bulwark-orange/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl" />
         </motion.div>
       </div>
     </section>
