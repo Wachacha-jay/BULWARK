@@ -1,0 +1,209 @@
+You are a senior frontend architect and product designer. Your task is to design and implement a modern, high-performance, scalable frontend for a construction materials company (Bulwark Industries, Kenya).
+
+The frontend must not be a simple marketing website. It must function as a **conversion engine, decision-support interface, and data collection layer**, fully integrated with backend APIs and future ML systems.
+
+---
+
+## CORE OBJECTIVES
+
+1. Maximize conversion (turn visitors into customers or distributors)
+2. Provide an intuitive, frictionless user experience
+3. Integrate seamlessly with backend APIs (FastAPI)
+4. Support SEO and content marketing
+5. Be scalable and maintainable long-term
+
+---
+
+## TECH STACK
+
+* Framework: Next.js (latest version, App Router)
+* Language: TypeScript
+* Styling: Tailwind CSS
+* State management: React Query / Zustand
+* Forms: React Hook Form + Zod validation
+* SEO: Next.js metadata API
+* Analytics hooks ready (GA4, custom tracking)
+
+---
+
+## INFORMATION ARCHITECTURE
+
+Design the site with clear navigation:
+
+1. Home
+2. Products
+3. How It Works
+4. For Contractors / Developers (B2B)
+5. Distributor Program
+6. Blog / Resources
+7. Contact / Support
+
+---
+
+## KEY FEATURES TO IMPLEMENT
+
+1. Smart Quote Calculator (Frontend)
+
+* Input: project size (sqm)
+* Call backend API: /quote
+* Display:
+
+  * Bags required
+  * Estimated cost
+* Must be fast, interactive, and mobile-friendly
+
+2. Product Recommendation Tool
+
+* Inputs:
+
+  * Surface type
+  * Climate
+  * Project size
+* Call backend API: /recommend
+* Display structured recommendation
+
+3. WhatsApp Integration
+
+* Floating WhatsApp button
+* Pre-filled quick messages (pricing, coverage, distributors)
+
+4. Multi-CTA System
+
+* “Request Quote”
+* “Become a Distributor”
+* “Download Datasheet”
+* “Contact Sales”
+
+---
+
+## UX / UI REQUIREMENTS
+
+* Clean, modern, professional design
+* Strong visual hierarchy
+* Mobile-first design
+* Fast loading (<2s target)
+* Accessible (WCAG considerations)
+
+Design principles:
+
+* Outcome-driven messaging (not product-centric)
+* Clear user paths for:
+
+  * Individual buyers
+  * Contractors
+  * Distributors
+
+Include:
+
+* Hero section with strong value proposition
+* Before/after visual sections
+* Trust indicators (certifications, testimonials)
+* Use-case sections
+
+---
+
+## COMPONENT ARCHITECTURE
+
+Design reusable components:
+
+* Navbar (responsive)
+* Hero section
+* Feature sections
+* Product cards
+* Testimonial carousel
+* CTA blocks
+* Forms (quote, contact, distributor)
+* Footer
+
+Ensure:
+
+* Component reusability
+* Separation of concerns
+* Clean folder structure
+
+---
+
+## API INTEGRATION
+
+Integrate with backend endpoints:
+
+* GET /quote
+* GET /recommend
+* POST /contact
+* POST /distributor-signup
+
+Handle:
+
+* Loading states
+* Error states
+* Caching (React Query)
+
+---
+
+## SEO & CONTENT MANAGEMENT
+
+* Dynamic meta tags for each page
+* Blog system (MDX or CMS-ready)
+* Structured content pages for SEO
+
+Include:
+
+* Schema markup (structured data)
+* Optimized headings (H1–H3)
+* Internal linking strategy
+
+---
+
+## PERFORMANCE OPTIMIZATION
+
+* Image optimization (Next.js Image)
+* Lazy loading components
+* Code splitting
+* Minimize bundle size
+
+---
+
+## ANALYTICS & TRACKING
+
+Prepare hooks for:
+
+* Page views
+* CTA clicks
+* Quote usage
+* Form submissions
+
+Design event tracking structure.
+
+---
+
+## ADMIN & SCALABILITY CONSIDERATIONS
+
+Frontend must be designed to support:
+
+* Easy content updates
+* Integration with CMS (future-ready)
+* Feature expansion (AI tools, dashboards)
+
+---
+
+## DELIVERABLES
+
+1. Full folder structure
+2. Core page implementations
+3. Reusable component library
+4. API integration examples
+5. SEO implementation
+6. Performance optimization techniques
+
+---
+
+## GOAL
+
+The final frontend should feel like a premium, intelligent platform that:
+
+* Builds trust instantly
+* Guides users clearly
+* Converts efficiently
+* Scales with business growth
+
+Think like a product engineer, not just a UI developer. Prioritize usability, performance, and long-term scalability.
