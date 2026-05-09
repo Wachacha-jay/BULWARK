@@ -15,7 +15,8 @@ import {
   Search,
   ShieldCheck,
   Menu,
-  X
+  X,
+  TrendingUp
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
