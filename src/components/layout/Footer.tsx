@@ -3,16 +3,16 @@ import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 
 const socialLinks = [
   { 
-    Icon: () => (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#1877F2">
+    Icon: ({ size }: { size?: number }) => (
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="#1877F2">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
       </svg>
     ), 
     href: "https://www.facebook.com/profile.php?id=100084896551995&mibextid=ZbWKwL" 
   },
   { 
-    Icon: () => (
-      <svg viewBox="0 0 24 24" className="w-5 h-5">
+    Icon: ({ size }: { size?: number }) => (
+      <svg viewBox="0 0 24 24" width={size} height={size}>
         <defs>
           <radialGradient id="rg" r="150%" cx="30%" cy="107%">
             <stop stopColor="#fdf497" offset="0" />
@@ -28,16 +28,16 @@ const socialLinks = [
     href: "https://www.instagram.com/bulwarkindustrieske/" 
   },
   { 
-    Icon: () => (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="#FF0000">
+    Icon: ({ size }: { size?: number }) => (
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="#FF0000">
         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
       </svg>
     ), 
     href: "https://www.youtube.com/@bulwarkindustrieske" 
   },
   { 
-    Icon: () => (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+    Icon: ({ size }: { size?: number }) => (
+      <svg viewBox="0 0 24 24" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
         <path d="M12.53 0H9.59v17.36c0 2.36-1.92 4.27-4.28 4.27s-4.28-1.92-4.28-4.27 1.92-4.28 4.28-4.28c.16 0 .31.01.46.03V10.1c-.15-.01-.3-.02-.46-.02C2.37 10.08 0 12.45 0 15.37S2.37 20.66 5.31 20.66c2.94 0 5.31-2.37 5.31-5.3V7.12C12.92 8.78 14.99 9.87 17.3 9.87v-2.94a5.27 5.27 0 01-4.77-3.03V0z" fill="#25F4EE" transform="translate(-1, -1)" />
         <path d="M12.53 0H9.59v17.36c0 2.36-1.92 4.27-4.28 4.27s-4.28-1.92-4.28-4.27 1.92-4.28 4.28-4.28c.16 0 .31.01.46.03V10.1c-.15-.01-.3-.02-.46-.02C2.37 10.08 0 12.45 0 15.37S2.37 20.66 5.31 20.66c2.94 0 5.31-2.37 5.31-5.3V7.12C12.92 8.78 14.99 9.87 17.3 9.87v-2.94a5.27 5.27 0 01-4.77-3.03V0z" fill="#FE2C55" transform="translate(1, 1)" />
         <path d="M12.53 0H9.59v17.36c0 2.36-1.92 4.27-4.28 4.27s-4.28-1.92-4.28-4.27 1.92-4.28 4.28-4.28c.16 0 .31.01.46.03V10.1c-.15-.01-.3-.02-.46-.02C2.37 10.08 0 12.45 0 15.37S2.37 20.66 5.31 20.66c2.94 0 5.31-2.37 5.31-5.3V7.12C12.92 8.78 14.99 9.87 17.3 9.87v-2.94a5.27 5.27 0 01-4.77-3.03V0z" fill="white" />
