@@ -2,95 +2,112 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calculator, ArrowRight, Info } from "lucide-react";
+import { Calculator, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function QuotePreview() {
-  const [sqm, setSqm] = useState<number>(100);
+  const [sqm, setSqm] = useState<number>(250);
   
-  // Simple logic for the preview (real one would call API)
+  // Real logic based on Premium Filler price (950)
   const bagsNeeded = Math.ceil(sqm / 15);
-  const estimatedCost = bagsNeeded * 2500;
+  const estimatedCost = bagsNeeded * 950;
 
   return (
-    <section className="py-24 bg-bulwark-slate text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-bulwark-orange/5 blur-3xl pointer-events-none" />
+    <section className="py-24 bg-bulwark-charcoal text-white overflow-hidden relative">
+      {/* Subtle UI Background */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-bulwark-orange/10 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/2 opacity-40" />
       
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-black leading-tight">
-            Smart Estimation. <br />
-            <span className="text-bulwark-orange">Zero Guesswork.</span>
-          </h2>
-          <p className="text-white/60 text-lg">
-            Tell us your project size, and our engine calculates the exact materials needed. 
-            Reduce waste by up to 20% with our precision quoting tool.
-          </p>
-          <ul className="space-y-4 pt-4">
-            {["Real-time pricing", "Stock availability check", "Direct distributor routing"].map((item, i) => (
-              <li key={i} className="flex items-center space-x-3 text-sm font-medium">
-                <div className="w-5 h-5 rounded-full bg-bulwark-orange/20 flex items-center justify-center text-bulwark-orange">
-                  <ArrowRight size={12} />
-                </div>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="glass-card bg-white/5 border-white/10 p-8 rounded-3xl"
+          className="space-y-6"
         >
-          <div className="flex items-center space-x-3 mb-8 pb-6 border-b border-white/10">
-            <Calculator className="text-bulwark-orange" />
-            <h3 className="text-xl font-bold">Quick Quote Preview</h3>
+          <div className="space-y-4">
+            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+              <Sparkles size={14} className="text-bulwark-orange" />
+              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white/70">Calculation Engine</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tight">
+              Smart Estimation. <br />
+              <span className="text-bulwark-orange">Zero Guesswork.</span>
+            </h2>
+            <p className="text-white/50 text-base md:text-lg font-medium leading-relaxed max-w-lg">
+              Precision planning to eliminate waste. Get an accurate breakdown of your requirements in seconds.
+            </p>
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-white/60 mb-2">Project Surface Area (sqm)</label>
-              <input
-                type="range"
-                min="10"
-                max="5000"
-                step="10"
-                value={sqm}
-                onChange={(e) => setSqm(parseInt(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-bulwark-orange"
-              />
-              <div className="flex justify-between mt-2 text-xs font-bold text-white/40">
-                <span>10m²</span>
-                <span className="text-bulwark-orange text-lg">{sqm}m²</span>
-                <span>5000m²</span>
+          <div className="flex flex-wrap gap-6">
+            <div className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-bulwark-orange group-hover:bg-bulwark-orange group-hover:text-white transition-all">
+                <ShieldCheck size={20} />
               </div>
+              <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-none">ISO Certified<br/><span className="text-white/60">Model</span></p>
+            </div>
+            <div className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-bulwark-orange group-hover:bg-bulwark-orange group-hover:text-white transition-all">
+                <Calculator size={20} />
+              </div>
+              <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-none">Live KES<br/><span className="text-white/60">Pricing</span></p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="relative z-10 glass-card bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-xl shadow-2xl">
+            <div className="flex items-center space-x-3 mb-8">
+              <Calculator className="text-bulwark-orange" size={24} />
+              <h3 className="text-[10px] font-black tracking-[0.3em] uppercase text-white/40">Quick Estimate</h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <p className="text-white/40 text-xs uppercase mb-1">Bags Required</p>
-                <p className="text-2xl font-black text-bulwark-orange">~{bagsNeeded}</p>
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <div className="flex justify-between items-end">
+                  <label className="text-[9px] font-black text-white/40 uppercase tracking-widest">Surface Area</label>
+                  <p className="text-2xl font-black text-bulwark-orange">{sqm}<span className="text-xs text-white/20 ml-1 italic font-medium">m²</span></p>
+                </div>
+                <input
+                  type="range"
+                  min="10"
+                  max="5000"
+                  step="10"
+                  value={sqm}
+                  onChange={(e) => setSqm(parseInt(e.target.value))}
+                  className="w-full h-1 bg-white/10 rounded-full appearance-none cursor-pointer accent-bulwark-orange"
+                />
               </div>
-              <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <p className="text-white/40 text-xs uppercase mb-1">Est. Investment</p>
-                <p className="text-2xl font-black text-white">KES {estimatedCost.toLocaleString()}</p>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/[0.03] p-4 rounded-2xl border border-white/5 space-y-1">
+                  <p className="text-white/30 text-[9px] font-black uppercase tracking-widest">Bags Required</p>
+                  <p className="text-xl font-black text-white">~{bagsNeeded} <span className="text-[10px] text-white/20">Bags</span></p>
+                </div>
+                <div className="bg-bulwark-orange/10 p-4 rounded-2xl border border-bulwark-orange/20 space-y-1">
+                  <p className="text-bulwark-orange/60 text-[9px] font-black uppercase tracking-widest">Est. Investment</p>
+                  <p className="text-xl font-black text-white"><span className="text-[10px] text-bulwark-orange/40 mr-1">KES</span>{estimatedCost.toLocaleString()}</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <Link 
+                  href="/quote" 
+                  className="w-full py-4 bg-white text-bulwark-charcoal rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center space-x-2 hover:bg-bulwark-orange hover:text-white transition-all shadow-lg"
+                >
+                  <span>Generate Full Quote</span>
+                  <ArrowRight size={16} />
+                </Link>
+                <p className="text-center text-[8px] font-bold text-white/20 uppercase tracking-widest">
+                  Estimates based on standard application rates.
+                </p>
               </div>
             </div>
-
-            <Link 
-              href="/quote" 
-              className="w-full btn-primary py-4 flex items-center justify-center space-x-2"
-            >
-              <span>Get Full Breakdown</span>
-              <ArrowRight size={18} />
-            </Link>
-            
-            <p className="text-center text-white/30 text-[10px] flex items-center justify-center space-x-1">
-              <Info size={12} />
-              <span>Estimates based on standard application rates.</span>
-            </p>
           </div>
         </motion.div>
       </div>

@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,12 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-screen">
+        <ConditionalLayout>
           {children}
-        </main>
-        <Footer />
-        <FloatingContact />
+        </ConditionalLayout>
       </body>
     </html>
   );

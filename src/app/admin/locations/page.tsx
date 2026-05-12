@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { 
   Plus, 
   Search, 
@@ -35,10 +36,10 @@ export default function LocationManager() {
           <h1 className="text-3xl font-black text-bulwark-charcoal tracking-tight">Location Manager</h1>
           <p className="text-slate-500">Manage your authorized distributor network and site-wide locator map.</p>
         </div>
-        <button className="btn-primary flex items-center space-x-2 px-6 py-3">
+        <Link href="/admin/locations/new" className="btn-primary flex items-center space-x-2 px-6 py-3 text-white">
           <Plus size={20} />
           <span>Add New Location</span>
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -132,14 +133,14 @@ export default function LocationManager() {
                     </div>
                   </td>
                   <td className="p-6 text-right">
-                    <div className="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button className="p-2 hover:bg-white hover:shadow-md rounded-lg text-slate-400 hover:text-bulwark-orange transition-all">
+                    <div className="flex items-center justify-end space-x-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
+                      <button className="p-2 bg-slate-50 lg:hover:bg-white hover:shadow-md rounded-lg text-slate-400 hover:text-bulwark-orange transition-all">
                         <Edit2 size={18} />
                       </button>
-                      <button className="p-2 hover:bg-white hover:shadow-md rounded-lg text-slate-400 hover:text-bulwark-charcoal transition-all">
+                      <button className="p-2 bg-slate-50 lg:hover:bg-white hover:shadow-md rounded-lg text-slate-400 hover:text-bulwark-charcoal transition-all">
                         <Navigation size={18} />
                       </button>
-                      <button className="p-2 hover:bg-white hover:shadow-md rounded-lg text-red-300 hover:text-red-500 transition-all">
+                      <button className="p-2 bg-slate-50 lg:hover:bg-white hover:shadow-md rounded-lg text-red-300 hover:text-red-500 transition-all">
                         <Trash2 size={18} />
                       </button>
                     </div>

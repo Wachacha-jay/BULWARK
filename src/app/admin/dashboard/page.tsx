@@ -26,11 +26,11 @@ export default function DashboardOverview() {
           <p className="text-slate-500">Welcome back! Here's what's happening across the Bulwark network.</p>
         </div>
         <div className="flex gap-3">
-          <Link href="/admin/blog" className="flex items-center space-x-2 bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-bold hover:bg-slate-50 transition-all">
+          <Link href="/admin/blog/new" className="flex items-center space-x-2 bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-bold hover:bg-slate-50 transition-all">
             <Plus size={18} />
             <span>New Blog</span>
           </Link>
-          <Link href="/admin/products" className="btn-primary flex items-center space-x-2 px-4 py-2 text-sm">
+          <Link href="/admin/products/new" className="btn-primary flex items-center space-x-2 px-4 py-2 text-sm">
             <Plus size={18} />
             <span>Add Product</span>
           </Link>

@@ -7,22 +7,22 @@ import { ChevronRight, ShieldCheck, Activity, BarChart3 } from "lucide-react";
 
 const heroSlides = [
   {
-    image: "/images/product.png",
-    label: "Wall Filler",
-    badge: "#1 Choice",
-    subBadge: "Premium White hydrophobic finish"
+    image: "/images/premium-filler.jpeg",
+    label: "Premium Wall Filler",
+    badge: "Hydrophobic",
+    subBadge: "Brilliant white finish"
+  },
+  {
+    image: "/images/internal-filler.jpeg",
+    label: "Internal Wall Filler",
+    badge: "Super Smooth",
+    subBadge: "German Technology"
   },
   {
     image: "/images/products in manufacturing.jpg",
-    label: "Manufactured",
+    label: "Production Excellence",
     badge: "German Tech",
     subBadge: "State of the art precision"
-  },
-  {
-    image: "/images/products in manufacturing 2.jpg",
-    label: "Quality Control",
-    badge: "ISO Certified",
-    subBadge: "Strict standards at every batch"
   }
 ];
 
@@ -117,7 +117,7 @@ export default function Hero() {
                    animate={{ opacity: 1, scale: 1 }}
                    exit={{ opacity: 0, scale: 0.9 }}
                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                   className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-1000"
+                   className="object-cover w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-1000"
                  />
                </AnimatePresence>
                

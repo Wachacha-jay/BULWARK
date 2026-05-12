@@ -8,37 +8,19 @@ const products = [
     id: 1,
     name: "Premium Wall Skimming Filler",
     category: "Wall Putty",
-    description: "Cement-based wall putty for internal and external surfaces. Brilliant white and hydrophobic.",
-    price: "2,450",
+    description: "Our flagship cement-based wall putty designed for both internal and external surfaces. Features advanced hydrophobic properties and a brilliant white finish for ultimate durability.",
+    price: "950",
     rating: 5.0,
-    image: "/images/product-1.jpg",
+    image: "/images/premium-filler.jpeg",
   },
   {
     id: 2,
-    name: "AquaShield Waterproofing",
-    category: "Waterproofing",
-    description: "High-performance elastomeric waterproofing for roofs and wet areas.",
-    price: "3,800",
-    rating: 4.8,
-    image: "/images/product-2.jpg",
-  },
-  {
-    id: 3,
-    name: "Bulwark Tile Adhesive",
-    category: "Adhesives",
-    description: "Strong bond adhesive for ceramic and porcelain tiles in high-traffic areas.",
-    price: "1,200",
+    name: "Internal Wall Skimming Filler",
+    category: "Wall Putty",
+    description: "Specially formulated for high-quality internal finishing. Provides a super-smooth texture that's easy to sand and paint, perfect for creating professional interior spaces.",
+    price: "650",
     rating: 4.9,
-    image: "/images/product-3.jpg",
-  },
-  {
-    id: 4,
-    name: "Eco-Smooth Finish",
-    category: "Finishing",
-    description: "Eco-friendly, low-dust sanding finish for high-end interior decorations.",
-    price: "2,100",
-    rating: 4.7,
-    image: "/images/product-4.jpg",
+    image: "/images/internal-filler.jpeg",
   },
 ];
 
@@ -67,10 +49,10 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p) => (
             <div key={p.id} className="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 flex flex-col h-full bg-white">
-              <div className="aspect-square bg-slate-100 relative overflow-hidden">
+              <div className="aspect-[4/3] bg-slate-100 relative overflow-hidden">
                 <div className="absolute top-4 left-4 z-10">
                    <div className="bg-white/90 backdrop-blur px-2 py-1 rounded-md flex items-center space-x-1 text-[10px] font-bold text-bulwark-orange shadow-sm">
                       <Shield size={10} />
@@ -78,11 +60,12 @@ export default function ProductsPage() {
                    </div>
                 </div>
                 {/* Product Image */}
-                <div className="absolute inset-0 p-6 group-hover:scale-110 transition-transform duration-700">
-                   <img 
-                     src="/images/product.png" 
+                <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700">
+                   <Image 
+                     src={p.image} 
                      alt={p.name} 
-                     className="w-full h-full object-contain"
+                     fill
+                     className="object-cover"
                    />
                 </div>
               </div>
@@ -102,8 +85,9 @@ export default function ProductsPage() {
                     <p className="text-[10px] text-slate-400 uppercase font-bold">From</p>
                     <p className="font-black text-bulwark-charcoal">KES {p.price}</p>
                   </div>
-                  <Link href={`/products/${p.id}`} className="w-10 h-10 bg-bulwark-slate text-white rounded-full flex items-center justify-center hover:bg-bulwark-orange transition-colors">
-                    <ArrowRight size={18} />
+                  <Link href={`/quote`} className="flex items-center gap-2 px-4 py-2 bg-bulwark-slate text-white rounded-full hover:bg-bulwark-orange transition-colors text-xs font-bold">
+                    <span>Get Quote</span>
+                    <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>
@@ -123,23 +107,5 @@ export default function ProductsPage() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Package({ className }: { className?: string }) {
-  return (
-    <svg 
-      className={className} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-      <path d="m3.3 7 8.7 5 8.7-5" />
-      <path d="M12 22V12" />
-    </svg>
   );
 }

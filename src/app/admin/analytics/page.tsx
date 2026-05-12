@@ -43,25 +43,25 @@ export default function AnalyticsDashboard() {
 
   return (
     <div className="space-y-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
         <div>
-          <h1 className="text-3xl font-black text-bulwark-charcoal tracking-tight flex items-center gap-3">
+          <h1 className="text-2xl md:text-3xl font-black text-bulwark-charcoal tracking-tight flex items-center gap-3">
             Analytics Intelligence
             <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 text-[10px] font-black uppercase tracking-widest rounded-full flex items-center gap-1">
               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
               Live
             </span>
           </h1>
-          <p className="text-slate-500 text-sm">Real-time performance monitoring and market intelligence.</p>
+          <p className="text-slate-500 text-sm mt-1">Real-time performance monitoring and market intelligence.</p>
         </div>
-        <div className="flex gap-3">
-          <button className="flex items-center space-x-2 bg-white border border-slate-200 px-4 py-2.5 rounded-xl text-sm font-bold hover:bg-slate-50 transition-all">
+        <div className="flex gap-2 w-full sm:w-auto">
+          <button className="flex-1 sm:flex-none flex items-center justify-center space-x-2 bg-white border border-slate-200 px-4 py-2.5 rounded-xl text-sm font-bold hover:bg-slate-50 transition-all">
             <Download size={18} />
-            <span>Export Report</span>
+            <span className="hidden xs:inline">Export</span>
           </button>
-          <div className="flex items-center space-x-2 bg-bulwark-charcoal text-white px-4 py-2.5 rounded-xl text-sm font-bold">
+          <div className="flex-1 sm:flex-none flex items-center justify-center space-x-2 bg-bulwark-charcoal text-white px-4 py-2.5 rounded-xl text-sm font-bold">
             <Filter size={18} className="text-bulwark-orange" />
-            <span>Last 30 Days</span>
+            <span>30 Days</span>
           </div>
         </div>
       </div>

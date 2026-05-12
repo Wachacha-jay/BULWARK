@@ -36,7 +36,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-bulwark-slate/40 uppercase">Email</p>
-                  <p className="text-lg font-bold text-bulwark-charcoal">sales@bulwark.co.ke</p>
+                  <p className="text-lg font-bold text-bulwark-charcoal">info@bulwark.ac.ke</p>
                 </div>
               </div>
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-bulwark-slate/40 uppercase">Office</p>
-                  <p className="text-lg font-bold text-bulwark-charcoal">Industrial Area, Nairobi, Kenya</p>
+                  <p className="text-lg font-bold text-bulwark-charcoal">Mukima Drive, Nairobi, Kenya</p>
                 </div>
               </div>
             </div>

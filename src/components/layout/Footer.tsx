@@ -117,7 +117,7 @@ export default function Footer() {
           <ul className="space-y-4 text-white/60 text-sm">
             <li className="flex items-start space-x-3">
               <MapPin size={18} className="text-bulwark-orange shrink-0" />
-              <span>Bulwark Plaza, Industrial Area, Nairobi, Kenya</span>
+              <span>Mukima Drive, Nairobi, Kenya</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone size={18} className="text-bulwark-orange shrink-0" />
@@ -125,7 +125,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-3">
               <Mail size={18} className="text-bulwark-orange shrink-0" />
-              <span>sales@bulwark.co.ke</span>
+              <span>info@bulwark.ac.ke</span>
             </li>
           </ul>
         </div>
