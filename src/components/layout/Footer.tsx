@@ -125,7 +125,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-3">
               <Mail size={18} className="text-bulwark-orange shrink-0" />
-              <span>info@bulwark.ac.ke</span>
+              <span>info@bulwark.co.ke</span>
             </li>
           </ul>
         </div>

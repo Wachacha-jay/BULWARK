@@ -18,7 +18,7 @@ export default function TermsPage() {
           <h2 className="text-2xl font-bold mb-6">3. Disclaimer</h2>
           <p className="mb-8">The materials on Bulwark Industries' website are provided on an 'as is' basis. Bulwark Industries makes no warranties, expressed or implied.</p>
           
-          <p className="text-sm text-slate-400 mt-20 italic">For full legal inquiries, please contact info@bulwark.ac.ke</p>
+          <p className="text-sm text-slate-400 mt-20 italic">For full legal inquiries, please contact info@bulwark.co.ke</p>
         </div>
       </section>
     </div>

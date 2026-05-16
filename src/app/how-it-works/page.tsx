@@ -49,7 +49,7 @@ export default function HowItWorks() {
               <p className="text-white/40 max-w-lg leading-relaxed italic">"See our experts demonstrate the precision application process for Bulwark Premium Wall Filler."</p>
             </div>
             <a 
-              href="https://youtu.be/K-v4lHdcGeA"
+              href="https://youtu.be/ucHU0Np43WE"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary px-12 py-5 flex items-center space-x-3 text-lg"

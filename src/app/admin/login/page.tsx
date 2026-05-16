@@ -48,7 +48,7 @@ export default function AdminLogin() {
                 <input 
                   type="email" 
                   required
-                  placeholder="admin@bulwark.ac.ke"
+                  placeholder="admin@bulwark.co.ke"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none focus:border-bulwark-orange focus:ring-1 focus:ring-bulwark-orange transition-all"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

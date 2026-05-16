@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, Filter, ArrowRight, Download, Shield } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
+import ProductVideos from "@/components/products/ProductVideos";
 
 const products = [
   {
@@ -93,6 +94,11 @@ export default function ProductsPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Product Insight Videos */}
+        <div className="mt-24">
+          <ProductVideos />
         </div>
 
         <div className="mt-20 p-12 bg-bulwark-charcoal rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-8">
